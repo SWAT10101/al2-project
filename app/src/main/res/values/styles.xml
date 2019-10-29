@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Menu Material theme -->
+        <item name="popupMenuStyle">@style/Widget.MaterialComponents.PopupMenu</item>
+        <item name="android:contextPopupMenuStyle">@style/Widget.MaterialComponents.PopupMenu.ContextMenu</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.MaterialComponents.PopupMenu.Overflow</item>
     </style>
 
 
@@ -33,7 +38,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="loginCard" parent="parent"></style>
+    <style name="loginCard" parent="parent" />
 
     <style name="linearParent" parent="parent">
         <item name="android:orientation">vertical</item>
