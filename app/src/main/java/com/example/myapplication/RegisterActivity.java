@@ -116,9 +116,9 @@ public class RegisterActivity extends AppCompatActivity {
         boolean check = true;
         if (checkEmptyEditText(first_name_edit, first_name_field, "First Name Require")) check = false;
         if (checkEmptyEditText(last_name_edit, last_name_field, "Last Name Require")) check = false;
-        if (checkEmptyEditText(email_edit, email_field, "Email Require") || ValidEmail(email_edit, email_field)) check = false;
-        if (checkEmptyEditText(password_edit, password_field, "Password Require")) check = false;
-        if (checkEmptyEditText(re_password_edit, re_password_field, "Re Password Require")) check = false;
+        if (checkEmptyEditText(email_edit, email_field, "Email Require") || validEmail(email_edit, email_field)) check = false;
+        if (checkEmptyEditText(password_edit, password_field, "Password Require") || passwordLength(password_edit, password_field)) check = false;
+        if (checkEmptyEditText(re_password_edit, re_password_field, "Re Password Require") || passwordMatch(password_edit, re_password_edit, re_password_field)) check = false;
         if (checkEmptyEditText(phone_edit, phone_field, "Phone Number Require")) check = false;
         if (checkEmptyEditText(region_auto_complete_text_view, region_field, "Region Require")) check = false;
         if (checkEmptyEditText(state_edit, state_field, "State Require")) check = false;
@@ -128,11 +128,42 @@ public class RegisterActivity extends AppCompatActivity {
         if (checkEmptyEditText(floor_edit, floor_field, "Floor Require")) check = false;
         if (checkEmptyEditText(flat_edit, flat_field, "Flat Require")) check = false;
 
+
         return check;
     }
 
 
-    public boolean ValidEmail(EditText text, TextInputLayout TFB) {
+    private boolean passwordMatch(EditText password1, EditText password2, TextInputLayout TFB){
+
+        if(!password1.getText().toString().trim().equals(password2.getText().toString().trim()))
+        {
+            TFB.setErrorEnabled(true);
+            TFB.setError("Password not match");
+            return  false;
+        }
+        else
+        {
+            return true;
+        }
+
+    } // To check re password match
+
+    public boolean passwordLength(EditText text, TextInputLayout TFB){
+
+        if(text.length() < 8 )
+        {
+            TFB.setErrorEnabled(true);
+            TFB.setError("Password should be 8 character long");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    } // To check password length
+
+    public boolean validEmail(EditText text, TextInputLayout TFB) {
 
         if(!Patterns.EMAIL_ADDRESS.matcher(text.getText().toString().trim()).matches())
         {
