@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -116,14 +116,17 @@
                                         android:layout_height="wrap_content"
                                         app:boxStrokeColor="@color/primaryTextColor"
                                         app:hintTextColor="@color/primaryTextColor"
-                                        >
+                                        tools:ignore="TooDeepLayout"
+                                        android:id="@+id/first_name_field">
                                         <EditText
                                             android:textCursorDrawable="@color/primaryTextColor"
                                             android:inputType="text"
                                             android:maxLines="1"
                                             android:hint="@string/first_name"
                                             android:layout_height="wrap_content"
-                                            android:layout_width="match_parent"/>
+                                            android:layout_width="match_parent"
+                                            android:importantForAutofill="no"
+                                            android:id="@+id/first_name_edit"/>
                                     </com.google.android.material.textfield.TextInputLayout>
 
                                     <!-- Last name edit text -->
@@ -135,6 +138,7 @@
                                         android:layout_height="wrap_content"
                                         app:boxStrokeColor="@color/primaryTextColor"
                                         app:hintTextColor="@color/primaryTextColor"
+                                        android:id="@+id/last_name_field"
                                         >
                                         <EditText
                                             android:textCursorDrawable="@color/primaryTextColor"
@@ -142,7 +146,9 @@
                                             android:maxLines="1"
                                             android:hint="@string/last_name"
                                             android:layout_height="wrap_content"
-                                            android:layout_width="match_parent"/>
+                                            android:layout_width="match_parent"
+                                            android:importantForAutofill="no"
+                                            android:id="@+id/last_name_edit"/>
                                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -155,14 +161,17 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
-                                    app:hintTextColor="@color/primaryTextColor">
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/email_field">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
                                         android:inputType="textEmailAddress"
                                         android:maxLines="1"
                                         android:hint="@string/email"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/email_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Password edit text -->
@@ -173,14 +182,16 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    >
+                                    android:id="@+id/password_field">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
                                         android:inputType="textPassword"
                                         android:maxLines="1"
                                         android:hint="@string/password"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/password_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Re Password edit text -->
@@ -191,6 +202,7 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/re_password_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
@@ -198,7 +210,9 @@
                                         android:maxLines="1"
                                         android:hint="@string/re_password"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/re_password_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Mobile number edit text -->
@@ -209,14 +223,16 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    >
+                                    android:id="@+id/phone_field">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
                                         android:inputType="phone"
                                         android:maxLines="1"
                                         android:hint="@string/mobile_number"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/phone_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                             </LinearLayout>
@@ -263,10 +279,11 @@
                                         android:layout_height="wrap_content"
                                         app:boxStrokeColor="@color/primaryTextColor"
                                         app:hintTextColor="@color/primaryTextColor"
-                                        android:hint="@string/region">
+                                        android:hint="@string/region"
+                                        android:id="@+id/region_field">
 
                                         <AutoCompleteTextView
-                                            android:id="@+id/filled_exposed_dropdown"
+                                            android:id="@+id/region_auto_complete_text_view"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"/>
 
@@ -281,6 +298,7 @@
                                         android:layout_height="wrap_content"
                                         app:boxStrokeColor="@color/primaryTextColor"
                                         app:hintTextColor="@color/primaryTextColor"
+                                        android:id="@+id/state_field"
                                         >
                                         <EditText
                                             android:textCursorDrawable="@color/primaryTextColor"
@@ -288,7 +306,9 @@
                                             android:maxLines="1"
                                             android:hint="@string/state"
                                             android:layout_height="wrap_content"
-                                            android:layout_width="match_parent"/>
+                                            android:layout_width="match_parent"
+                                            android:importantForAutofill="no"
+                                            android:id="@+id/state_edit"/>
                                     </com.google.android.material.textfield.TextInputLayout>
 
                                 </LinearLayout>
@@ -301,6 +321,7 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/block_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
@@ -308,7 +329,9 @@
                                         android:maxLines="1"
                                         android:hint="@string/block"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/block_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Street address edit text -->
@@ -319,6 +342,7 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/street_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
@@ -326,7 +350,9 @@
                                         android:maxLines="1"
                                         android:hint="@string/street"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/street_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Building address edit text -->
@@ -337,6 +363,7 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/building_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
@@ -344,7 +371,9 @@
                                         android:maxLines="1"
                                         android:hint="@string/building"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/buidling_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Floor address edit text -->
@@ -355,14 +384,17 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/floor_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
                                         android:inputType="text"
                                         android:maxLines="1"
-                                        android:hint="Floor"
+                                        android:hint="@string/floor"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/floor_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Flat address edit text -->
@@ -373,6 +405,7 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/flat_field"
                                     >
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
@@ -380,7 +413,9 @@
                                         android:maxLines="1"
                                         android:hint="@string/flat"
                                         android:layout_height="wrap_content"
-                                        android:layout_width="match_parent"/>
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/flat_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -395,7 +430,8 @@
                         <com.google.android.material.button.MaterialButton
                             style="@style/loginButton"
                             android:layout_gravity="center"
-                            android:text="@string/register" />
+                            android:text="@string/register"
+                            android:onClick="register"/>
 
                         <TextView
                             style="@style/parent"
