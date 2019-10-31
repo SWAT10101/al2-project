@@ -14,7 +14,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 @SuppressLint("Registered")
 public class RegisterActivity extends AppCompatActivity {
@@ -26,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
              phone_edit, state_edit, block_edit, street_edit, buidling_edit, floor_edit, flat_edit;
 
     AutoCompleteTextView region_auto_complete_text_view;
+    int postionOfReigon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
         region_auto_complete_text_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
                 String selection = (String)parent.getItemAtPosition(position);
+                postionOfReigon = position + 1;
 
                 Toast.makeText(RegisterActivity.this, position+1 + " -- " + selection, Toast.LENGTH_LONG).show();
             }
@@ -107,6 +115,47 @@ public class RegisterActivity extends AppCompatActivity {
        if(Validate())
        {
            Log.d("####", "OKAAAAAY");
+
+           String first_name = first_name_edit.getText().toString().trim();
+           String last_name = last_name_edit.getText().toString().trim();
+           String email = email_edit.getText().toString().trim();
+           String password = password_edit.getText().toString().trim();
+           int phone = Integer.parseInt(phone_edit.getText().toString().trim());
+           String state = state_edit.getText().toString().trim();
+           String block = block_edit.getText().toString().trim();
+           String street = street_edit.getText().toString().trim();
+           String building = buidling_edit.getText().toString().trim();
+           String floor = floor_edit.getText().toString().trim();
+           String flat = flat_edit.getText().toString().trim();
+
+
+           retrofit2.Call<ResponseBody> call = RetrofitClient
+                   .getInstance()
+                   .getApi()
+                   .createUser(first_name, last_name, email, password, phone, postionOfReigon, state, block, street, building, floor, flat);
+
+           call.enqueue(new Callback<ResponseBody>() {
+               @Override
+               public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                   try
+                   {
+                       String res = response.body().string();
+                       Toast.makeText(RegisterActivity.this, res, Toast.LENGTH_LONG).show();
+                   }
+                   catch (IOException e)
+                   {
+                       e.printStackTrace();
+                   }
+
+
+               }
+
+               @Override
+               public void onFailure(Call<ResponseBody> call, Throwable t) {
+                   Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+               }
+           });
        }
        else
        {
@@ -134,7 +183,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         return check;
-    }
+    } // To check validate all input
 
 
     private boolean passwordMatch(EditText password1, EditText password2, TextInputLayout TFB){
