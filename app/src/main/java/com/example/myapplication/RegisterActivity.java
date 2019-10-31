@@ -108,6 +108,10 @@ public class RegisterActivity extends AppCompatActivity {
        {
            Log.d("####", "OKAAAAAY");
        }
+       else
+       {
+           Log.d("####", "NNNOOTT OKAAAAAY");
+       }
 
     }
 
@@ -139,11 +143,11 @@ public class RegisterActivity extends AppCompatActivity {
         {
             TFB.setErrorEnabled(true);
             TFB.setError("Password not match");
-            return  false;
+            return true;
         }
         else
         {
-            return true;
+            return false;
         }
 
     } // To check re password match
@@ -154,11 +158,11 @@ public class RegisterActivity extends AppCompatActivity {
         {
             TFB.setErrorEnabled(true);
             TFB.setError("Password should be 8 character long");
-            return false;
+            return true;
         }
         else
         {
-            return true;
+            return false;
         }
 
     } // To check password length
@@ -169,11 +173,11 @@ public class RegisterActivity extends AppCompatActivity {
         {
             TFB.setErrorEnabled(true);
             TFB.setError("Enter a valid email");
-            return false;
+            return true;
         }
         else
         {
-            return  true;
+            return  false;
         }
 
     } // To check email valid
