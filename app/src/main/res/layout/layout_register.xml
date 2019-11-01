@@ -433,6 +433,12 @@
                             android:text="@string/register"
                             android:onClick="register"/>
 
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/loginButton"
+                            android:layout_gravity="center"
+                            android:text="test"
+                            android:onClick="test"/>
+
                         <TextView
                             style="@style/parent"
                             android:textAlignment="center"

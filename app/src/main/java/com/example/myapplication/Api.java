@@ -24,7 +24,5 @@ public interface Api {
             @Field("building") String building,
             @Field("floor") String floor,
             @Field("flat") String flat
-
-
     );
 }

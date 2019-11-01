@@ -13,14 +13,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.JsonObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.regex.Pattern;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 @SuppressLint("Registered")
 public class RegisterActivity extends AppCompatActivity {
@@ -32,12 +36,23 @@ public class RegisterActivity extends AppCompatActivity {
              phone_edit, state_edit, block_edit, street_edit, buidling_edit, floor_edit, flat_edit;
 
     AutoCompleteTextView region_auto_complete_text_view;
-    int postionOfReigon;
+
+    Call<ResponseBody> call;
+
+
+
+
+    // variables
+    int postionOfReigon, phone;
+    String first_name, last_name, email, password, state, block, street, building, floor, flat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_register);
+
+
+
 
         first_name_field = findViewById(R.id.first_name_field);
         first_name_edit = findViewById(R.id.first_name_edit);
@@ -110,43 +125,72 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+
+
+
     public void register(View view) {
 
        if(Validate())
        {
            Log.d("####", "OKAAAAAY");
 
-           String first_name = first_name_edit.getText().toString().trim();
-           String last_name = last_name_edit.getText().toString().trim();
-           String email = email_edit.getText().toString().trim();
-           String password = password_edit.getText().toString().trim();
-           int phone = Integer.parseInt(phone_edit.getText().toString().trim());
-           String state = state_edit.getText().toString().trim();
-           String block = block_edit.getText().toString().trim();
-           String street = street_edit.getText().toString().trim();
-           String building = buidling_edit.getText().toString().trim();
-           String floor = floor_edit.getText().toString().trim();
-           String flat = flat_edit.getText().toString().trim();
+            first_name = first_name_edit.getText().toString().trim();
+            last_name = last_name_edit.getText().toString().trim();
+            email = email_edit.getText().toString().trim();
+            password = password_edit.getText().toString().trim();
+            phone = Integer.parseInt(phone_edit.getText().toString().trim());
+            state = state_edit.getText().toString().trim();
+            block = block_edit.getText().toString().trim();
+            street = street_edit.getText().toString().trim();
+            building = buidling_edit.getText().toString().trim();
+            floor = floor_edit.getText().toString().trim();
+            flat = flat_edit.getText().toString().trim();
 
 
-           retrofit2.Call<ResponseBody> call = RetrofitClient
-                   .getInstance()
-                   .getApi()
-                   .createUser(first_name, last_name, email, password, phone, postionOfReigon, state, block, street, building, floor, flat);
+          Call<ResponseBody> call = RetrofitClient
+                .getInstance()
+                .getApi()
+                .createUser(first_name, last_name, email, password, phone, postionOfReigon, state, block, street, building, floor, flat);
 
            call.enqueue(new Callback<ResponseBody>() {
                @Override
                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
+                   String res = null;
+
                    try
                    {
-                       String res = response.body().string();
-                       Toast.makeText(RegisterActivity.this, res, Toast.LENGTH_LONG).show();
+
+                       if (response.code() == 201)
+                       {
+                            res = response.body().string();
+                       }
+                       else
+                       {
+                            res = response.errorBody().string();
+                       }
                    }
-                   catch (IOException e)
+                   catch(IOException e)
                    {
                        e.printStackTrace();
                    }
+
+
+                   if(res != null)
+                   {
+                       try
+                       {
+                           JSONObject jsonObject = new JSONObject(res);
+                           Toast.makeText(RegisterActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                       }
+                       catch (JSONException e)
+                       {
+                           e.printStackTrace();
+                       }
+
+
+                   }
+
 
 
                }
@@ -246,4 +290,21 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
     } // To check empty edit text
+
+    public void test(View view) {
+
+        first_name = first_name_edit.getText().toString().trim();
+        last_name = last_name_edit.getText().toString().trim();
+        email = email_edit.getText().toString().trim();
+        password = password_edit.getText().toString().trim();
+        phone = Integer.parseInt(phone_edit.getText().toString().trim());
+        state = state_edit.getText().toString().trim();
+        block = block_edit.getText().toString().trim();
+        street = street_edit.getText().toString().trim();
+        building = buidling_edit.getText().toString().trim();
+        floor = floor_edit.getText().toString().trim();
+        flat = flat_edit.getText().toString().trim();
+
+        Log.d("test", first_name+"--"+ last_name+"--"+ email+"--"+ password+"--"+ phone+"--"+ postionOfReigon+ "--"+state+"--"+ block+"--"+ street+"--"+ building+"--"+floor+"--"+ flat);
+    }
 }
