@@ -13,18 +13,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 @SuppressLint("Registered")
 public class RegisterActivity extends AppCompatActivity {
@@ -152,54 +151,50 @@ public class RegisterActivity extends AppCompatActivity {
                 .getApi()
                 .createUser(first_name, last_name, email, password, phone, postionOfReigon, state, block, street, building, floor, flat);
 
-           call.enqueue(new Callback<ResponseBody>() {
-               @Override
-               public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+          call.enqueue(new Callback<ResponseBody>() {
+              @Override
+              public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                  String res = null;
+                  try
+                  {
+                      if (response.code() == 200)
+                      {
+                          res = response.body().string();
+                      }
+                      else if (response.code() == 422)
+                      {
+                          res = response.errorBody().string();
+                      }
+                  }
+                  catch(IOException e)
+                  {
+                      e.printStackTrace();
+                  }
 
-                   String res = null;
-
-                   try
-                   {
-
-                       if (response.code() == 201)
-                       {
-                            res = response.body().string();
-                       }
-                       else
-                       {
-                            res = response.errorBody().string();
-                       }
-                   }
-                   catch(IOException e)
-                   {
-                       e.printStackTrace();
-                   }
-
-
-                   if(res != null)
-                   {
-                       try
-                       {
-                           JSONObject jsonObject = new JSONObject(res);
-                           Toast.makeText(RegisterActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                       }
-                       catch (JSONException e)
-                       {
-                           e.printStackTrace();
-                       }
+                  if(res != null)
+                  {
+                      try
+                      {
+                          JSONObject jsonObject = new JSONObject(res);
+                          Toast.makeText(RegisterActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                      }
+                      catch (JSONException e)
+                      {
+                          e.printStackTrace();
+                      }
 
 
-                   }
+                  }
+              }
+
+              @Override
+              public void onFailure(Call<ResponseBody> call, Throwable t) {
+                  Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+
+              }
+          });
 
 
-
-               }
-
-               @Override
-               public void onFailure(Call<ResponseBody> call, Throwable t) {
-                   Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
-               }
-           });
        }
        else
        {
