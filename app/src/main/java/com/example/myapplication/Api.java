@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-import okhttp3.ResponseBody;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -11,7 +11,7 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("createuser")
-    Call<ResponseBody> createUser(
+    Call<ResultModel> createUser(
             @Field("firstname") String firstname,
             @Field("lastname") String lastname,
             @Field("email") String email,

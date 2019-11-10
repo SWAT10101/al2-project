@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,9 +21,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import okhttp3.ResponseBody;
+import okhttp3.internal.http2.ErrorCode;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 @SuppressLint("Registered")
@@ -146,14 +149,44 @@ public class RegisterActivity extends AppCompatActivity {
             flat = flat_edit.getText().toString().trim();
 
 
-          Call<ResponseBody> call = RetrofitClient
+          Call<ResultModel> call = RetrofitClient
                 .getInstance()
                 .getApi()
                 .createUser(first_name, last_name, email, password, phone, postionOfReigon, state, block, street, building, floor, flat);
 
-          call.enqueue(new Callback<ResponseBody>() {
+          call.enqueue(new Callback<ResultModel>() {
               @Override
-              public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+              public void onResponse(Call<ResultModel> call, Response<ResultModel> response) {
+
+                  boolean error = false;
+                  String mass = null;
+
+                  if(!response.isSuccessful())
+                  {
+
+                      Gson gson = new Gson();
+                      ResultModel message= null;
+
+                      if (response.errorBody() != null) {
+                          message = gson.fromJson(response.errorBody().charStream(), ResultModel.class);
+                          Log.d("#####", message.getMessage());
+                          error = message.getError();
+                          mass = message.getMessage();
+
+
+                      }
+
+
+                  }
+
+                      Log.d("#####", error + "------" + mass);
+
+
+
+
+
+
+                  /*
                   String res = null;
                   try
                   {
@@ -184,11 +217,11 @@ public class RegisterActivity extends AppCompatActivity {
                       }
 
 
-                  }
+                  }*/
               }
 
               @Override
-              public void onFailure(Call<ResponseBody> call, Throwable t) {
+              public void onFailure(Call<ResultModel> call, Throwable t) {
                   Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
 
               }
