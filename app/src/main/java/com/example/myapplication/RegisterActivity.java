@@ -12,6 +12,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 
@@ -158,20 +160,22 @@ public class RegisterActivity extends AppCompatActivity {
               @Override
               public void onResponse(Call<ResultModel> call, Response<ResultModel> response) {
 
-                  boolean error = false;
-                  String mass = null;
+
 
                   if(!response.isSuccessful())
                   {
 
                       Gson gson = new Gson();
-                      ResultModel message= null;
 
                       if (response.errorBody() != null) {
-                          message = gson.fromJson(response.errorBody().charStream(), ResultModel.class);
+                          ResultModel message = gson.fromJson(response.errorBody().charStream(), ResultModel.class);
                           Log.d("#####", message.getMessage());
-                          error = message.getError();
-                          mass = message.getMessage();
+
+                          new MaterialAlertDialogBuilder(RegisterActivity.this)
+                                  .setTitle("Error")
+                                  .setMessage(message.getMessage())
+                                  .setPositiveButton("Ok", null)
+                                  .show();
 
 
                       }
@@ -179,45 +183,20 @@ public class RegisterActivity extends AppCompatActivity {
 
                   }
 
-                      Log.d("#####", error + "------" + mass);
-
-
-
-
-
-
-                  /*
-                  String res = null;
-                  try
+                  if(response.isSuccessful())
                   {
-                      if (response.code() == 200)
+                      if(response.body() != null)
                       {
-                          res = response.body().string();
+                          Toast.makeText(RegisterActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                          Log.d("####", response.body().getMessage() + "------" + response.body().getError());
+
+                          // continue here after create user
                       }
-                      else if (response.code() == 422)
-                      {
-                          res = response.errorBody().string();
-                      }
-                  }
-                  catch(IOException e)
-                  {
-                      e.printStackTrace();
+
                   }
 
-                  if(res != null)
-                  {
-                      try
-                      {
-                          JSONObject jsonObject = new JSONObject(res);
-                          Toast.makeText(RegisterActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                      }
-                      catch (JSONException e)
-                      {
-                          e.printStackTrace();
-                      }
 
 
-                  }*/
               }
 
               @Override
@@ -232,6 +211,7 @@ public class RegisterActivity extends AppCompatActivity {
        else
        {
            Log.d("####", "NNNOOTT OKAAAAAY");
+           Toast.makeText(RegisterActivity.this, "Fill Required", Toast.LENGTH_LONG).show();
        }
 
     }
@@ -319,20 +299,5 @@ public class RegisterActivity extends AppCompatActivity {
 
     } // To check empty edit text
 
-    public void test(View view) {
 
-        first_name = first_name_edit.getText().toString().trim();
-        last_name = last_name_edit.getText().toString().trim();
-        email = email_edit.getText().toString().trim();
-        password = password_edit.getText().toString().trim();
-        phone = Integer.parseInt(phone_edit.getText().toString().trim());
-        state = state_edit.getText().toString().trim();
-        block = block_edit.getText().toString().trim();
-        street = street_edit.getText().toString().trim();
-        building = buidling_edit.getText().toString().trim();
-        floor = floor_edit.getText().toString().trim();
-        flat = flat_edit.getText().toString().trim();
-
-        Log.d("test", first_name+"--"+ last_name+"--"+ email+"--"+ password+"--"+ phone+"--"+ postionOfReigon+ "--"+state+"--"+ block+"--"+ street+"--"+ building+"--"+floor+"--"+ flat);
-    }
 }
