@@ -5,12 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class Regions {
 
-    @SerializedName("RegionId")
-    @Expose
+
+
     private int RegionId;
 
-    @SerializedName("Name")
-    @Expose
+
     private String Name;
 
     public Regions(int regionId, String name) {

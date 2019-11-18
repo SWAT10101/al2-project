@@ -3,6 +3,7 @@ package com.example.myapplication.api;
 
 
 
+import com.example.myapplication.models.LoginResponse;
 import com.example.myapplication.models.RegionModel;
 import com.example.myapplication.models.ResultModel;
 
@@ -36,4 +37,12 @@ public interface Api {
 
     @GET("allregion")
     Call<RegionModel> allRegions();
+
+
+    @FormUrlEncoded
+    @POST("userlogin")
+    Call<LoginResponse> userlogin(
+            @Field("email") String email,
+            @Field("password") String password
+    );
 }

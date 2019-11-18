@@ -226,7 +226,8 @@ public class RegisterActivity extends AppCompatActivity {
                           Toast.makeText(RegisterActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
                           Log.d("####", response.body().getMessage() + "------" + response.body().getError());
 
-                          // continue here after create user
+                          Intent tologin = new Intent(RegisterActivity.this, LoginActivity.class);
+                          startActivity(tologin);
                       }
 
                   }
