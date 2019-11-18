@@ -1,9 +1,15 @@
-package com.example.myapplication;
+package com.example.myapplication.api;
 
+
+
+
+import com.example.myapplication.models.RegionModel;
+import com.example.myapplication.models.ResultModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Api {
@@ -25,4 +31,9 @@ public interface Api {
             @Field("floor") String floor,
             @Field("flat") String flat
     );
+
+
+
+    @GET("allregion")
+    Call<RegionModel> allRegions();
 }

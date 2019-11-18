@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,22 +13,18 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.myapplication.models.RegionModel;
+import com.example.myapplication.models.Regions;
+import com.example.myapplication.models.ResultModel;
+import com.example.myapplication.api.RetrofitClient;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
-import okhttp3.internal.http2.ErrorCode;
+import java.util.ArrayList;
+import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 
 @SuppressLint("Registered")
@@ -41,9 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     AutoCompleteTextView region_auto_complete_text_view;
 
-    Call<ResponseBody> call;
 
-
+    ArrayList<String> COUNTRIES  = new ArrayList<>();
 
 
     // variables
@@ -54,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_register);
+
 
 
 
@@ -97,7 +94,50 @@ public class RegisterActivity extends AppCompatActivity {
         flat_field = findViewById(R.id.flat_field);
         flat_edit = findViewById(R.id.flat_edit);
 
+        this.setRegionMenu();
 
+
+
+
+
+
+
+    }
+
+
+    public void setRegionMenu()
+    {
+        Call<RegionModel> call = RetrofitClient
+                .getInstance()
+                .getApi().allRegions();
+
+        call.enqueue(new Callback<RegionModel>() {
+
+            @Override
+            public void onResponse(Call<RegionModel> call, Response<RegionModel> response) {
+
+                if(response.isSuccessful())
+                {
+                    if(response.body() != null)
+                    {
+
+                        List<Regions> regions = response.body().getRegions();
+
+                        for(int i = 0; i < regions.size(); i++){
+                            Log.d("####", regions.get(i).getRegionId() + "----" + regions.get(i).getName());
+                            COUNTRIES.add(regions.get(i).getName());
+
+                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RegionModel> call, Throwable t) {
+
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
         region_auto_complete_text_view.setAdapter(adapter);
@@ -109,16 +149,12 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, position+1 + " -- " + selection, Toast.LENGTH_LONG).show();
             }
         });
+    } // This function get region name from DB and set it to menu
 
-    }
-
-    private static final String[] COUNTRIES = new String[] {
-            "Belgium", "France", "Italy", "Germany", "Spain"
-    };
 
 
     public void signin(View view) {
-        Intent toLogin = new Intent(RegisterActivity.this, MainActivity.class);
+        Intent toLogin = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(toLogin);
         this.finish(); // <-- To close this activity
     }

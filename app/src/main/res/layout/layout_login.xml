@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:orientation="vertical"
     style="@style/loginParent">
 
@@ -81,22 +81,23 @@
 
                         <!-- Email edit text -->
                         <com.google.android.material.textfield.TextInputLayout
-                            android:layout_margin="3dp"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_margin="3dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:boxStrokeColor="@color/primaryTextColor"
                             app:hintTextColor="@color/primaryTextColor"
-                            >
+                            android:id="@+id/login_email_field">
                             <EditText
                                 android:textCursorDrawable="@color/primaryTextColor"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
                                 android:hint="@string/email"
                                 android:layout_height="wrap_content"
-                                android:layout_width="match_parent"/>
+                                android:layout_width="match_parent"
+                                android:importantForAutofill="no"
+                                android:id="@+id/login_email_edit"/>
                         </com.google.android.material.textfield.TextInputLayout>
-
 
                         <!-- Password edit text -->
                         <com.google.android.material.textfield.TextInputLayout
@@ -106,14 +107,17 @@
                             android:layout_height="wrap_content"
                             app:boxStrokeColor="@color/primaryTextColor"
                             app:hintTextColor="@color/primaryTextColor"
-                            >
+                            android:id="@+id/login_password_field">
+
                             <EditText
                                 android:textCursorDrawable="@color/primaryTextColor"
                                 android:inputType="textPassword"
                                 android:maxLines="1"
                                 android:hint="@string/password"
                                 android:layout_height="wrap_content"
-                                android:layout_width="match_parent"/>
+                                android:layout_width="match_parent"
+                                android:id="@+id/login_password"
+                                android:importantForAutofill="no" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <TextView
@@ -129,7 +133,8 @@
                             style="@style/loginButton"
                             android:text="@string/login"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="@dimen/loginViewsMargin"/>
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:onClick="login"/>
 
                         <TextView
                             android:id="@+id/singup"
