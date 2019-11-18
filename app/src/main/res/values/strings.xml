@@ -24,4 +24,9 @@
     <string name="building">Building</string>
     <string name="flat">Flat</string>
     <string name="floor">Floor</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="todo">TODO</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

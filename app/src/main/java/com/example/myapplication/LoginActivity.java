@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
 
-        if(this.Validate())
+       /* if(this.Validate())
         {
 
             email = login_email_edit.getText().toString().trim();
@@ -123,7 +123,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        }
+        }*/
+
+       Intent i = new Intent(this, UserArea.class);
+       startActivity(i);
 
     }
 
