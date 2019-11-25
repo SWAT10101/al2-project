@@ -9,13 +9,18 @@
     android:background="@drawable/desk"
     android:padding="20dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/person"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
+        android:src="@drawable/person1"
+        app:civ_border_color="@color/colorPrimaryDark"
+        app:civ_border_width="2dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="5"
+        app:civ_shadow_color="#000000" />
+
 
     <TextView
         android:id="@+id/name"
