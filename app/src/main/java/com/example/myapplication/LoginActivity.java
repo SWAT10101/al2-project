@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
 
-       /* if(this.Validate())
+       if(this.Validate())
         {
 
             email = login_email_edit.getText().toString().trim();
@@ -97,6 +97,15 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         if(response.body() != null)
                         {
+
+                            Intent i = new Intent(LoginActivity.this, UserArea.class);
+                            i.putExtra("firstname", response.body().getUser().getFirstName());
+                            i.putExtra("lastname", response.body().getUser().getLasttName());
+                            i.putExtra("email", response.body().getUser().getEmail());
+                            startActivity(i);
+
+
+
                             Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
                             Log.d("####", response.body().getMessage() + "------" + response.body().getUser().getFirstName());
                             Log.d("####", response.body().getMessage() + "------" + response.body().getUser().getLasttName());
@@ -123,10 +132,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        }*/
-
-       Intent i = new Intent(this, UserArea.class);
-       startActivity(i);
+        }
 
     }
 
