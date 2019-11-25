@@ -27,7 +27,6 @@ public class UserArea extends AppCompatActivity {
     TextView userName, userEmail;
 
 
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,5 +118,14 @@ public class UserArea extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public TextView getUserName() {
+        return userName;
+    }
+
+    public TextView getUserEmail() {
+        return userEmail;
     }
 }

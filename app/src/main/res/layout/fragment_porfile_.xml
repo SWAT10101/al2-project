@@ -52,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TEST NAME"
+                    android:id="@+id/profile_user_name"
                     android:textColor="@color/whiteCardColor"
                     android:textStyle="bold"
                     android:textSize="15sp"
@@ -61,10 +61,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TEST Email"
+                    android:id="@+id/profile_user_email"
                     android:textColor="@color/whiteCardColor"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     />
 
 
