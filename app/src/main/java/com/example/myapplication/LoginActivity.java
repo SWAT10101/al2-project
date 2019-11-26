@@ -102,6 +102,14 @@ public class LoginActivity extends AppCompatActivity {
                             i.putExtra("firstname", response.body().getUser().getFirstName());
                             i.putExtra("lastname", response.body().getUser().getLasttName());
                             i.putExtra("email", response.body().getUser().getEmail());
+                            i.putExtra("phone", response.body().getUser().getPhone());
+                            i.putExtra("region", response.body().getUser().getRegion());
+                            i.putExtra("state", response.body().getUser().getState());
+                            i.putExtra("block", response.body().getUser().getBlock());
+                            i.putExtra("building", response.body().getUser().getBuilding());
+                            i.putExtra("street", response.body().getUser().getStreet());
+                            i.putExtra("floor", response.body().getUser().getFloor());
+                            i.putExtra("flat", response.body().getUser().getFlat());
                             startActivity(i);
 
 

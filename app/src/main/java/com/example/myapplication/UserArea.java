@@ -26,6 +26,9 @@ public class UserArea extends AppCompatActivity {
 
     TextView userName, userEmail;
 
+    String region, state, block, building, street, floor, flat;
+    int phone;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -47,6 +50,14 @@ public class UserArea extends AppCompatActivity {
         if (dataFromLogin != null) {
             userName.setText(dataFromLogin.getString("firstname") + " " + dataFromLogin.getString("lastname"));
             userEmail.setText(dataFromLogin.getString("email"));
+            phone = dataFromLogin.getInt("phone");
+            region = dataFromLogin.getString("region");
+            state = dataFromLogin.getString("state");
+            block = dataFromLogin.getString("block");
+            building = dataFromLogin.getString("building");
+            street = dataFromLogin.getString("street");
+            floor = dataFromLogin.getString("floor");
+            flat = dataFromLogin.getString("flat");
 
         }
 
@@ -127,5 +138,37 @@ public class UserArea extends AppCompatActivity {
 
     public TextView getUserEmail() {
         return userEmail;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getBlock() {
+        return block;
+    }
+
+    public String getBuilding() {
+        return building;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public String getFlat() {
+        return flat;
+    }
+
+    public int getPhone() {
+        return phone;
     }
 }
