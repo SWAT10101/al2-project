@@ -19,7 +19,7 @@ public class Porfile_Fragment extends Fragment {
 
 
 
-    private TextView profile_user_name, profile_user_email;
+
 
 
     public Porfile_Fragment() {
@@ -30,13 +30,18 @@ public class Porfile_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
+        // Get fragment view
         View fragment_profile_view = inflater.inflate(R.layout.fragment_porfile_, container, false);
 
-        profile_user_name = fragment_profile_view.findViewById(R.id.profile_user_name);
-        profile_user_email = fragment_profile_view.findViewById(R.id.profile_user_email);
+        // Get Items in fragment view by id
+        TextView profile_user_name = fragment_profile_view.findViewById(R.id.profile_user_name);
+        TextView profile_user_email = fragment_profile_view.findViewById(R.id.profile_user_email);
 
+        //Get user area activity to pass date from activity to fragment
         UserArea userArea = (UserArea) getActivity();
+
         if(userArea != null)
         {
            profile_user_name.setText(userArea.getUserName().getText().toString());
