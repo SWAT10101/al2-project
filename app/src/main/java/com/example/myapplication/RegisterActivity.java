@@ -212,11 +212,7 @@ public class RegisterActivity extends AppCompatActivity {
                                   .setMessage(message.getMessage())
                                   .setPositiveButton("Ok", null)
                                   .show();
-
-
                       }
-
-
                   }
 
                   if(response.isSuccessful())
