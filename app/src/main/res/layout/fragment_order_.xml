@@ -92,18 +92,23 @@
                             android:hint="@string/hole_number">
 
                             <AutoCompleteTextView
+                                android:id="@+id/hale_number"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:inputType="numberSigned"/>
 
                         </com.google.android.material.textfield.TextInputLayout>
 
+                        <!-- Halo 1 card -->
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             app:cardCornerRadius="5dp"
                             app:strokeColor="#000"
-                            app:strokeWidth="1dp">
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/hale_1">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -114,7 +119,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hole 1"
+                                    android:text="Hale 1"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
@@ -150,7 +155,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Type of material">
+                                    android:hint="Material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_1"
@@ -172,8 +177,10 @@
                                     android:hint="Style of furniture">
 
                                     <AutoCompleteTextView
+                                        android:id="@+id/style_of_furniture_1"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"/>
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
 
                                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -189,8 +196,29 @@
                                     android:hint="Pattern">
 
                                     <AutoCompleteTextView
+                                        android:id="@+id/pattern_1"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"/>
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/brand_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
 
                                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -296,6 +324,452 @@
 
                         </com.google.android.material.card.MaterialCardView>
 
+                        <!-- Halo 2 card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/hale_2"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hale 2"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- measurement edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    tools:ignore="TooDeepLayout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:hint="Measure"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- type of material menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Material">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/type_of_material_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- style of furniture menu select -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Style of furniture">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/style_of_furniture_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Pattern menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Pattern">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/pattern_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/brand_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Wall Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Floor Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Furniture color-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Furniture Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <!-- Halo 3 card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/hale_3"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hale 3"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- measurement edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    tools:ignore="TooDeepLayout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:hint="Measure"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- type of material menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Material">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/type_of_material_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- style of furniture menu select -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Style of furniture">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/style_of_furniture_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Pattern menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Pattern">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/pattern_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="Brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/brand_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Wall Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Floor Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Furniture color-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Furniture Color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+
+                        </com.google.android.material.card.MaterialCardView>
 
 
 
