@@ -86,7 +86,8 @@
                             android:layout_height="150dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_add_circle_outline_black_24dp"
-                            android:layout_margin="8dp"/>
+                            android:layout_margin="8dp"
+                            android:id="@+id/scheme_image" />
 
 
                         <!-- Spacer -->
@@ -112,7 +113,8 @@
                                 android:id="@+id/hale_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="numberSigned"/>
+                                android:inputType="numberSigned"
+                                tools:ignore="LabelFor" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,7 +138,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hale 1"
+                                    android:text="@string/hale_1"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
@@ -156,7 +158,7 @@
                                         android:textCursorDrawable="@color/primaryTextColor"
                                         android:inputType="number"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/measure"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
                                         android:importantForAutofill="no" />
@@ -172,7 +174,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_1"
@@ -191,7 +193,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_1"
@@ -210,7 +212,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_1"
@@ -229,7 +231,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_1"
@@ -250,9 +252,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_1_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -260,13 +263,16 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+
+                                   <com.google.android.material.card.MaterialCardView
+                                       android:layout_width="55dp"
+                                       android:layout_height="55dp"
+                                       app:cardCornerRadius="100dp"
+                                       android:backgroundTint="#ff0000"
+                                       android:layout_margin="6dp"
+                                       android:id="@+id/hale_1_wall_card_color">
+                                   </com.google.android.material.card.MaterialCardView>
+
 
                                 </LinearLayout>
 
@@ -281,9 +287,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_1_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -291,13 +298,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_1_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -312,9 +320,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_1_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -322,15 +331,22 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#00FF00"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_1_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
+
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"/>
 
 
                             </LinearLayout>
@@ -2019,20 +2035,7 @@
                         <!-- bathroom card here -->
 
 
-
-
-
-
                     </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
                 </com.google.android.material.card.MaterialCardView>

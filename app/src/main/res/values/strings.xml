@@ -39,4 +39,13 @@
     <string name="kitchen_number">kitchen number</string>
     <string name="bathroom">Bathroom</string>
     <string name="scheme_image">Scheme image</string>
+    <string name="hale_1">Hale 1</string>
+    <string name="measure">Measure</string>
+    <string name="material">Material</string>
+    <string name="style_of_furniture">Style of furniture</string>
+    <string name="pattern">Pattern</string>
+    <string name="brand">Brand</string>
+    <string name="wall_color">Wall Color</string>
+    <string name="floor_color">Floor Color</string>
+    <string name="furniture_color">Furniture Color</string>
 </resources>

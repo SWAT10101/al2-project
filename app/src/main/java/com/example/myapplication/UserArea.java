@@ -68,7 +68,7 @@ public class UserArea extends AppCompatActivity {
         toggle.syncState();
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_id, new Porfile_Fragment() ).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_id, new Order_Fragment() ).commit();
 
 
 

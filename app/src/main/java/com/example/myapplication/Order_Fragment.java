@@ -1,11 +1,21 @@
 package com.example.myapplication;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +23,22 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorSelectedListener;
+import com.flask.colorpicker.builder.ColorPickerClickListener;
+import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -33,6 +53,11 @@ public class Order_Fragment extends Fragment {
 
     private ArrayList<Integer> number_of_hale = new ArrayList<>();
     private ArrayList<Integer> number_of_room = new ArrayList<>();
+
+
+    private ImageView scheme_image;
+
+    private int IMAGE_FROM_GALLARY = 100;
 
     public Order_Fragment() {
         // Required empty public constructor
@@ -61,6 +86,129 @@ public class Order_Fragment extends Fragment {
 
 
 
+        //bt wall color hale 1
+        MaterialButton hale_1_wall_bt = fragment_order_view.findViewById(R.id.hale_1_wall_bt);
+        MaterialCardView hale_1_wall_card_color = fragment_order_view.findViewById(R.id.hale_1_wall_card_color);
+        hale_1_wall_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_1_wall_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt floor color hale 1
+        MaterialButton hale_1_floor_bt = fragment_order_view.findViewById(R.id.hale_1_floor_bt);
+        MaterialCardView hale_1_floor_card_color = fragment_order_view.findViewById(R.id.hale_1_floor_card_color);
+        hale_1_floor_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_1_floor_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt furniture color hale 1
+        MaterialButton hale_1_furniture_bt = fragment_order_view.findViewById(R.id.hale_1_furniture_bt);
+        MaterialCardView hale_1_furniture_card_color = fragment_order_view.findViewById(R.id.hale_1_furniture_card_color);
+        hale_1_furniture_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_1_furniture_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+            }
+        });
+
+
+
+
+
+        //scheme image
+        scheme_image = fragment_order_view.findViewById(R.id.scheme_image);
+        scheme_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                startActivityForResult(galleryIntent, IMAGE_FROM_GALLARY);
+            }
+        });
 
 
         // Hale selector
@@ -278,4 +426,31 @@ public class Order_Fragment extends Fragment {
         return  fragment_order_view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+
+        if(resultCode == RESULT_OK)
+        {
+
+            if (requestCode == IMAGE_FROM_GALLARY)
+            {
+
+                    Uri selectedImage = Objects.requireNonNull(data).getData();
+                    String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                    Cursor cursor = Objects.requireNonNull(getActivity()).getContentResolver().query(Objects.requireNonNull(selectedImage),
+                            filePathColumn, null, null, null);
+                    Objects.requireNonNull(cursor).moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String picturePath = cursor.getString(columnIndex);
+                    cursor.close();
+
+                    scheme_image.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+            }
+
+        }
+    }
 }

@@ -16,6 +16,9 @@ import com.example.myapplication.models.LoginResponse;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
+import com.karan.churi.PermissionManager.PermissionManager;
+
+import java.time.Instant;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,11 +32,16 @@ public class LoginActivity extends AppCompatActivity {
 
 
     String email, password;
+    PermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login);
+
+        //------------App permission requirement----------------------------------------------------
+        permissionManager = new PermissionManager() {};
+        permissionManager.checkAndRequestPermissions(LoginActivity.this);
 
         login_email_edit = findViewById(R.id.login_email_edit);
         login_email_field = findViewById(R.id.login_email_field);
@@ -56,7 +64,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void login(View view) {
+        Intent i = new Intent(LoginActivity.this, UserArea.class);
+        startActivity(i);
 
+/*
        if(this.Validate())
         {
 
@@ -141,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         }
+*/
 
     }
 
