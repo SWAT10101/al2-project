@@ -32,6 +32,7 @@ public class Order_Fragment extends Fragment {
     private String [] Brand = {"Safat Alghanim", "Ikea", "Banta", "Abyat", "Qurtaba", "Home Center", "Zara Center", "H&M"};
 
     private ArrayList<Integer> number_of_hale = new ArrayList<>();
+    private ArrayList<Integer> number_of_room = new ArrayList<>();
 
     public Order_Fragment() {
         // Required empty public constructor
@@ -46,18 +47,30 @@ public class Order_Fragment extends Fragment {
         // Get fragment view
         View fragment_order_view = inflater.inflate(R.layout.fragment_order_, container, false);
 
-        // Add number to array list
+        // Add number to hale array list
         for(int i = 1; i <= 3; i++)
         {
             number_of_hale.add(i);
+        }
+
+        // Add number to room array list
+        for(int i = 1; i <= 5; i++)
+        {
+            number_of_room.add(i);
         }
 
 
 
 
 
+        // Hale selector
         AutoCompleteTextView hale_number = fragment_order_view.findViewById(R.id.hale_number);
         hale_number.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, number_of_hale));
+
+
+        //Room selector
+        AutoCompleteTextView room_number = fragment_order_view.findViewById(R.id.room_number);
+        room_number.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, number_of_room));
 
 
         //Hale 1
@@ -101,7 +114,75 @@ public class Order_Fragment extends Fragment {
         //------------------------------------------------------------------------------------------
 
 
+        //Room 1
+        MaterialCardView room_1 = fragment_order_view.findViewById(R.id.room_1);
+        AutoCompleteTextView type_of_material_room_1 = fragment_order_view.findViewById(R.id.type_of_material_room_1);
+        AutoCompleteTextView style_of_furniture_room_1 = fragment_order_view.findViewById(R.id.style_of_furniture_room_1);
+        AutoCompleteTextView pattern_room_1 = fragment_order_view.findViewById(R.id.pattern_room_1);
+        AutoCompleteTextView brand_room_1 = fragment_order_view.findViewById(R.id.brand_room_1);
 
+        type_of_material_room_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_room_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_room_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_room_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+
+        //Room 2
+        MaterialCardView room_2 = fragment_order_view.findViewById(R.id.room_2);
+        AutoCompleteTextView type_of_material_room_2 = fragment_order_view.findViewById(R.id.type_of_material_room_2);
+        AutoCompleteTextView style_of_furniture_room_2 = fragment_order_view.findViewById(R.id.style_of_furniture_room_2);
+        AutoCompleteTextView pattern_room_2 = fragment_order_view.findViewById(R.id.pattern_room_2);
+        AutoCompleteTextView brand_room_2 = fragment_order_view.findViewById(R.id.brand_room_2);
+
+        type_of_material_room_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_room_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_room_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_room_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+        //Room 3
+        MaterialCardView room_3 = fragment_order_view.findViewById(R.id.room_3);
+        AutoCompleteTextView type_of_material_room_3 = fragment_order_view.findViewById(R.id.type_of_material_room_3);
+        AutoCompleteTextView style_of_furniture_room_3 = fragment_order_view.findViewById(R.id.style_of_furniture_room_3);
+        AutoCompleteTextView pattern_room_3 = fragment_order_view.findViewById(R.id.pattern_room_3);
+        AutoCompleteTextView brand_room_3 = fragment_order_view.findViewById(R.id.brand_room_3);
+
+        type_of_material_room_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_room_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_room_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_room_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+        //Room 4
+        MaterialCardView room_4 = fragment_order_view.findViewById(R.id.room_4);
+        AutoCompleteTextView type_of_material_room_4 = fragment_order_view.findViewById(R.id.type_of_material_room_4);
+        AutoCompleteTextView style_of_furniture_room_4 = fragment_order_view.findViewById(R.id.style_of_furniture_room_4);
+        AutoCompleteTextView pattern_room_4 = fragment_order_view.findViewById(R.id.pattern_room_4);
+        AutoCompleteTextView brand_room_4 = fragment_order_view.findViewById(R.id.brand_room_4);
+
+        type_of_material_room_4.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_room_4.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_room_4.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_room_4.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+        //Room 5
+        MaterialCardView room_5 = fragment_order_view.findViewById(R.id.room_5);
+        AutoCompleteTextView type_of_material_room_5 = fragment_order_view.findViewById(R.id.type_of_material_room_5);
+        AutoCompleteTextView style_of_furniture_room_5 = fragment_order_view.findViewById(R.id.style_of_furniture_room_5);
+        AutoCompleteTextView pattern_room_5 = fragment_order_view.findViewById(R.id.pattern_room_5);
+        AutoCompleteTextView brand_room_5 = fragment_order_view.findViewById(R.id.brand_room_5);
+
+        type_of_material_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+
+
+        // Hale selector action
         hale_number.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
                 int item = (int) parent.getItemAtPosition(position);
@@ -127,12 +208,70 @@ public class Order_Fragment extends Fragment {
                     hale_3.setVisibility(View.VISIBLE);
                 }
 
-
                 Log.d("###", parent.getItemAtPosition(position).toString());
-
 
             }
         });
+
+        // Room selector action
+        room_number.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int item = (int) parent.getItemAtPosition(position);
+
+                if (item == 1)
+                {
+                    room_1.setVisibility(View.VISIBLE);
+
+                    room_2.setVisibility(View.GONE);
+                    room_3.setVisibility(View.GONE);
+                    room_4.setVisibility(View.GONE);
+                    room_5.setVisibility(View.GONE);
+                }
+                else if (item == 2)
+                {
+                    room_1.setVisibility(View.VISIBLE);
+                    room_2.setVisibility(View.VISIBLE);
+
+                    room_3.setVisibility(View.GONE);
+                    room_4.setVisibility(View.GONE);
+                    room_5.setVisibility(View.GONE);
+                }
+                else if(item == 3)
+                {
+                    room_1.setVisibility(View.VISIBLE);
+                    room_2.setVisibility(View.VISIBLE);
+                    room_3.setVisibility(View.VISIBLE);
+
+                    room_4.setVisibility(View.GONE);
+                    room_5.setVisibility(View.GONE);
+                }
+                else if(item == 4)
+                {
+                    room_1.setVisibility(View.VISIBLE);
+                    room_2.setVisibility(View.VISIBLE);
+                    room_3.setVisibility(View.VISIBLE);
+                    room_4.setVisibility(View.VISIBLE);
+
+                    room_5.setVisibility(View.GONE);
+
+                }
+                else if(item == 5)
+                {
+                    room_1.setVisibility(View.VISIBLE);
+                    room_2.setVisibility(View.VISIBLE);
+                    room_3.setVisibility(View.VISIBLE);
+                    room_4.setVisibility(View.VISIBLE);
+                    room_5.setVisibility(View.VISIBLE);
+
+                }
+
+
+                Log.d("###", parent.getItemAtPosition(position).toString());
+
+            }
+        });
+
 
 
 

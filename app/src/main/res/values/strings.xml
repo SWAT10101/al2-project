@@ -35,4 +35,8 @@
     <string name="my_order">My Order</string>
     <string name="make_order">Make Order</string>
     <string name="hole_number">Hole number</string>
+    <string name="rooms_number">Rooms number</string>
+    <string name="kitchen_number">kitchen number</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="scheme_image">Scheme image</string>
 </resources>

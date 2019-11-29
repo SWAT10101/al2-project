@@ -49,7 +49,7 @@
                 <TextView
                     style="@style/headerText"
                     android:layout_gravity="center"
-                    android:text="App Snipp"
+                    android:text="Home Decoration"
                     android:layout_marginTop="40dp"/>
 
 
