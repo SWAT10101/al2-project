@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -216,4 +217,11 @@ public class LoginActivity extends AppCompatActivity {
 
     } // To check password length
 
+    public void app(View view) {
+
+        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.planner5d.swedishhomedesign"); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+
+    }
 }

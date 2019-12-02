@@ -145,7 +145,7 @@
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -153,16 +153,59 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/hale_1_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="@string/measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_1_length_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_1_width_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_1_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_1_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_1_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
                                 <!-- type of material menu select-->
@@ -264,14 +307,14 @@
                                         />
 
 
-                                   <com.google.android.material.card.MaterialCardView
-                                       android:layout_width="55dp"
-                                       android:layout_height="55dp"
-                                       app:cardCornerRadius="100dp"
-                                       android:backgroundTint="#ff0000"
-                                       android:layout_margin="6dp"
-                                       android:id="@+id/hale_1_wall_card_color">
-                                   </com.google.android.material.card.MaterialCardView>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_1_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
 
                                 </LinearLayout>
@@ -356,6 +399,7 @@
 
 
                         </com.google.android.material.card.MaterialCardView>
+
 
                         <!-- Halo 2 card -->
                         <com.google.android.material.card.MaterialCardView
@@ -494,7 +538,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Wall Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_2_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -502,13 +547,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_2_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -525,7 +571,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Floor Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_2_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -533,13 +580,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_2_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -556,7 +604,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Furniture Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_2_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -564,13 +613,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#00FF00"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_2_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -715,7 +765,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Wall Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_3_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -723,13 +774,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_3_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -746,7 +798,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Floor Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_3_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -754,13 +807,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#ff0000"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_3_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -777,7 +831,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="Furniture Color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/hale_3_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -785,13 +840,14 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:backgroundTint="#00FF00"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/hale_3_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -804,7 +860,7 @@
 
                         </com.google.android.material.card.MaterialCardView>
 
-
+<!-- *********************************************************************************************** -->
                         <!-- Spacer -->
                         <View
                             android:layout_width="match_parent"

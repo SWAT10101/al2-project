@@ -85,7 +85,7 @@ public class Order_Fragment extends Fragment {
         }
 
 
-
+        //*********************** hale 1 ***********************************************************
         //bt wall color hale 1
         MaterialButton hale_1_wall_bt = fragment_order_view.findViewById(R.id.hale_1_wall_bt);
         MaterialCardView hale_1_wall_card_color = fragment_order_view.findViewById(R.id.hale_1_wall_card_color);
@@ -194,6 +194,230 @@ public class Order_Fragment extends Fragment {
                         .show();
             }
         });
+
+
+         //*********************** hale 2 **********************************************************
+        //bt wall color hale 2
+        MaterialButton hale_2_wall_bt = fragment_order_view.findViewById(R.id.hale_2_wall_bt);
+        MaterialCardView hale_2_wall_card_color = fragment_order_view.findViewById(R.id.hale_2_wall_card_color);
+        hale_2_wall_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_2_wall_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt floor color hale 2
+        MaterialButton hale_2_floor_bt = fragment_order_view.findViewById(R.id.hale_2_floor_bt);
+        MaterialCardView hale_2_floor_card_color = fragment_order_view.findViewById(R.id.hale_2_floor_card_color);
+        hale_2_floor_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_2_floor_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt furniture color hale 2
+        MaterialButton hale_2_furniture_bt = fragment_order_view.findViewById(R.id.hale_2_furniture_bt);
+        MaterialCardView hale_2_furniture_card_color = fragment_order_view.findViewById(R.id.hale_2_furniture_card_color);
+        hale_2_furniture_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_2_furniture_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+            }
+        });
+
+
+        //*********************** hale 3 ***********************************************************
+        //bt wall color hale 3
+        MaterialButton hale_3_wall_bt = fragment_order_view.findViewById(R.id.hale_3_wall_bt);
+        MaterialCardView hale_3_wall_card_color = fragment_order_view.findViewById(R.id.hale_3_wall_card_color);
+        hale_3_wall_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_3_wall_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt floor color hale 3
+        MaterialButton hale_3_floor_bt = fragment_order_view.findViewById(R.id.hale_3_floor_bt);
+        MaterialCardView hale_3_floor_card_color = fragment_order_view.findViewById(R.id.hale_3_floor_card_color);
+        hale_3_floor_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_3_floor_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+
+        //bt furniture color hale 3
+        MaterialButton hale_3_furniture_bt = fragment_order_view.findViewById(R.id.hale_3_furniture_bt);
+        MaterialCardView hale_3_furniture_card_color = fragment_order_view.findViewById(R.id.hale_3_furniture_card_color);
+        hale_3_furniture_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ColorPickerDialogBuilder
+                        .with(getContext())
+                        .setTitle("Choose color")
+                        .initialColor(Color.WHITE)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
+                                Toast.makeText(getContext(), "onColorSelected: 0x" + Integer.toHexString(selectedColor), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                //changeBackgroundColor(selectedColor);
+                                hale_3_furniture_card_color.setBackgroundTintList(ColorStateList.valueOf(selectedColor));
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .build()
+                        .show();
+            }
+        });
+//--------------------------------------------------------------------------------------------------
+
 
 
 

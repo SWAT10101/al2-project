@@ -48,4 +48,7 @@
     <string name="wall_color">Wall Color</string>
     <string name="floor_color">Floor Color</string>
     <string name="furniture_color">Furniture Color</string>
+    <string name="length">Length</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
 </resources>
