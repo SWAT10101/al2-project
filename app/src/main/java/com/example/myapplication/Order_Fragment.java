@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -72,7 +74,7 @@ public class Order_Fragment extends Fragment {
         // Get fragment view
         View fragment_order_view = inflater.inflate(R.layout.fragment_order_, container, false);
 
-        // Add number to hale array list
+        // Add number to hale and nathroom array list
         for(int i = 1; i <= 3; i++)
         {
             number_of_hale.add(i);
@@ -86,6 +88,18 @@ public class Order_Fragment extends Fragment {
 
 
         //*********************** hale 1 ***********************************************************
+
+        MaterialCardView hale_1 = fragment_order_view.findViewById(R.id.hale_1);
+        AutoCompleteTextView type_of_material_1 = fragment_order_view.findViewById(R.id.type_of_material_1);
+        AutoCompleteTextView style_of_furniture_1 = fragment_order_view.findViewById(R.id.style_of_furniture_1);
+        AutoCompleteTextView pattern_1 = fragment_order_view.findViewById(R.id.pattern_1);
+        AutoCompleteTextView brand_1 = fragment_order_view.findViewById(R.id.brand_1);
+
+        type_of_material_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+
         //bt wall color hale 1
         MaterialButton hale_1_wall_bt = fragment_order_view.findViewById(R.id.hale_1_wall_bt);
         MaterialCardView hale_1_wall_card_color = fragment_order_view.findViewById(R.id.hale_1_wall_card_color);
@@ -197,6 +211,18 @@ public class Order_Fragment extends Fragment {
 
 
          //*********************** hale 2 **********************************************************
+
+        MaterialCardView hale_2 = fragment_order_view.findViewById(R.id.hale_2);
+        AutoCompleteTextView type_of_material_2 = fragment_order_view.findViewById(R.id.type_of_material_2);
+        AutoCompleteTextView style_of_furniture_2 = fragment_order_view.findViewById(R.id.style_of_furniture_2);
+        AutoCompleteTextView pattern_2 = fragment_order_view.findViewById(R.id.pattern_2);
+        AutoCompleteTextView brand_2 = fragment_order_view.findViewById(R.id.brand_2);
+
+        type_of_material_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+
         //bt wall color hale 2
         MaterialButton hale_2_wall_bt = fragment_order_view.findViewById(R.id.hale_2_wall_bt);
         MaterialCardView hale_2_wall_card_color = fragment_order_view.findViewById(R.id.hale_2_wall_card_color);
@@ -308,6 +334,18 @@ public class Order_Fragment extends Fragment {
 
 
         //*********************** hale 3 ***********************************************************
+
+        MaterialCardView hale_3 = fragment_order_view.findViewById(R.id.hale_3);
+        AutoCompleteTextView type_of_material_3 = fragment_order_view.findViewById(R.id.type_of_material_3);
+        AutoCompleteTextView style_of_furniture_3 = fragment_order_view.findViewById(R.id.style_of_furniture_3);
+        AutoCompleteTextView pattern_3 = fragment_order_view.findViewById(R.id.pattern_3);
+        AutoCompleteTextView brand_3 = fragment_order_view.findViewById(R.id.brand_3);
+
+        type_of_material_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
+        style_of_furniture_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
+        pattern_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
+        brand_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+
         //bt wall color hale 3
         MaterialButton hale_3_wall_bt = fragment_order_view.findViewById(R.id.hale_3_wall_bt);
         MaterialCardView hale_3_wall_card_color = fragment_order_view.findViewById(R.id.hale_3_wall_card_color);
@@ -435,6 +473,8 @@ public class Order_Fragment extends Fragment {
         });
 
 
+        //------- selector -------------------------------------------------------------------------
+
         // Hale selector
         AutoCompleteTextView hale_number = fragment_order_view.findViewById(R.id.hale_number);
         hale_number.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, number_of_hale));
@@ -444,46 +484,11 @@ public class Order_Fragment extends Fragment {
         AutoCompleteTextView room_number = fragment_order_view.findViewById(R.id.room_number);
         room_number.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, number_of_room));
 
-
-        //Hale 1
-        MaterialCardView hale_1 = fragment_order_view.findViewById(R.id.hale_1);
-        AutoCompleteTextView type_of_material_1 = fragment_order_view.findViewById(R.id.type_of_material_1);
-        AutoCompleteTextView style_of_furniture_1 = fragment_order_view.findViewById(R.id.style_of_furniture_1);
-        AutoCompleteTextView pattern_1 = fragment_order_view.findViewById(R.id.pattern_1);
-        AutoCompleteTextView brand_1 = fragment_order_view.findViewById(R.id.brand_1);
-
-        type_of_material_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
-        style_of_furniture_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
-        pattern_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
-        brand_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //Bathroom selector
+        AutoCompleteTextView bathroom_number = fragment_order_view.findViewById(R.id.bathroom_number);
+        bathroom_number.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, number_of_hale));
         //------------------------------------------------------------------------------------------
 
-
-        //Hale 2
-        MaterialCardView hale_2 = fragment_order_view.findViewById(R.id.hale_2);
-        AutoCompleteTextView type_of_material_2 = fragment_order_view.findViewById(R.id.type_of_material_2);
-        AutoCompleteTextView style_of_furniture_2 = fragment_order_view.findViewById(R.id.style_of_furniture_2);
-        AutoCompleteTextView pattern_2 = fragment_order_view.findViewById(R.id.pattern_2);
-        AutoCompleteTextView brand_2 = fragment_order_view.findViewById(R.id.brand_2);
-
-        type_of_material_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
-        style_of_furniture_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
-        pattern_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
-        brand_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
-        //------------------------------------------------------------------------------------------
-
-        //Hale 3
-        MaterialCardView hale_3 = fragment_order_view.findViewById(R.id.hale_3);
-        AutoCompleteTextView type_of_material_3 = fragment_order_view.findViewById(R.id.type_of_material_3);
-        AutoCompleteTextView style_of_furniture_3 = fragment_order_view.findViewById(R.id.style_of_furniture_3);
-        AutoCompleteTextView pattern_3 = fragment_order_view.findViewById(R.id.pattern_3);
-        AutoCompleteTextView brand_3 = fragment_order_view.findViewById(R.id.brand_3);
-
-        type_of_material_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
-        style_of_furniture_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
-        pattern_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
-        brand_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
-        //------------------------------------------------------------------------------------------
 
 
         //Room 1
@@ -551,6 +556,37 @@ public class Order_Fragment extends Fragment {
         pattern_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
         brand_room_5.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
         //------------------------------------------------------------------------------------------
+
+
+        //Bathroom 1
+        MaterialCardView bathroom_1 = fragment_order_view.findViewById(R.id.bathroom_1);
+        AutoCompleteTextView bathroom_1_brand = fragment_order_view.findViewById(R.id.bathroom_1_brand);
+
+        //TextInputEditText bathroom_1_length_edit_layout = fragment_order_view.findViewById(R.id.bathroom_1_length_edit_layout);
+        //EditText bathroom_1_length_edit = fragment_order_view.findViewById(R.id.bathroom_1_length_edit);
+
+        bathroom_1_brand.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //------------------------------------------------------------------------------------------
+
+
+        //Bathroom 2
+        MaterialCardView bathroom_2 = fragment_order_view.findViewById(R.id.bathroom_2);
+        AutoCompleteTextView bathroom_2_brand = fragment_order_view.findViewById(R.id.bathroom_2_brand);
+        bathroom_2_brand.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+        //TextInputEditText bathroom_2_length_edit_layout = fragment_order_view.findViewById(R.id.bathroom_2_length_edit_layout);
+       // EditText bathroom_2_length_edit = fragment_order_view.findViewById(R.id.bathroom_2_length_edit);
+
+
+        //------------------------------------------------------------------------------------------
+
+        //Bathroom 3
+        MaterialCardView bathroom_3 = fragment_order_view.findViewById(R.id.bathroom_3);
+        AutoCompleteTextView bathroom_3_brand = fragment_order_view.findViewById(R.id.bathroom_3_brand);
+        bathroom_3_brand.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Brand));
+       // TextInputEditText bathroom_3_length_edit_layout = fragment_order_view.findViewById(R.id.bathroom_3_length_edit_layout);
+       // EditText bathroom_3_length_edit = fragment_order_view.findViewById(R.id.bathroom_3_length_edit);
+
+
 
 
 
@@ -638,6 +674,38 @@ public class Order_Fragment extends Fragment {
 
                 }
 
+
+                Log.d("###", parent.getItemAtPosition(position).toString());
+
+            }
+        });
+
+        // Bathroom selector action
+        bathroom_number.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int item = (int) parent.getItemAtPosition(position);
+
+                if (item == 1)
+                {
+                    bathroom_1.setVisibility(View.VISIBLE);
+
+                    bathroom_2.setVisibility(View.GONE);
+                    bathroom_3.setVisibility(View.GONE);
+                }
+                else if (item == 2)
+                {
+                    bathroom_1.setVisibility(View.VISIBLE);
+                    bathroom_2.setVisibility(View.VISIBLE);
+
+                    bathroom_3.setVisibility(View.GONE);
+                }
+                else if(item == 3)
+                {
+                    bathroom_1.setVisibility(View.VISIBLE);
+                    bathroom_2.setVisibility(View.VISIBLE);
+                    bathroom_3.setVisibility(View.VISIBLE);
+                }
 
                 Log.d("###", parent.getItemAtPosition(position).toString());
 
