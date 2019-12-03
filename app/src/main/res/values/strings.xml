@@ -51,4 +51,15 @@
     <string name="length">Length</string>
     <string name="width">Width</string>
     <string name="height">Height</string>
+    <string name="room_1">Room 1</string>
+    <string name="room_2">Room 2</string>
+    <string name="room_3">Room 3</string>
+    <string name="room_4">Room 4</string>
+    <string name="room_5">Room 5</string>
+    <string name="bathroom_2">Bathroom 2</string>
+    <string name="bathroom_1">Bathroom 1</string>
+    <string name="bathroom_3">Bathroom 3</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="hale_2">Hale 2</string>
+    <string name="hale_3">Hale 3</string>
 </resources>

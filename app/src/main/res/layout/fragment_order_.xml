@@ -162,7 +162,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
                                         android:importantForAutofill="no"
-                                        android:id="@+id/hale_1_length_edit"/>
+                                        android:id="@+id/hale_1_length_edit"
+                                        tools:ignore="TooDeepLayout" />
                                 </com.google.android.material.textfield.TextInputLayout>
 
                                 <!-- Width edit text -->
@@ -311,7 +312,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#ff0000"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_1_wall_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -379,7 +379,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#00FF00"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_1_furniture_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -393,10 +392,6 @@
 
 
                             </LinearLayout>
-
-
-
-
 
                         </com.google.android.material.card.MaterialCardView>
 
@@ -422,14 +417,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hale 2"
+                                    android:text="@string/hale_2"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -437,15 +432,56 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/hale_2_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_2_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_2_width_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_2_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_2_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_2_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -458,7 +494,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_2"
@@ -477,7 +513,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_2"
@@ -496,7 +532,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_2"
@@ -515,7 +551,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_2"
@@ -536,7 +572,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_2_wall_bt"/>
@@ -551,7 +587,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#ff0000"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_2_wall_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -569,7 +604,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_2_floor_bt"/>
@@ -584,7 +619,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#ff0000"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_2_floor_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -602,7 +636,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_2_furniture_bt"/>
@@ -617,7 +651,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#00FF00"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_2_furniture_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -649,14 +682,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Hale 3"
+                                    android:text="@string/hale_3"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -664,15 +697,57 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/hale_3_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_3_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_3_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_3_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/hale_3_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/hale_3_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -685,7 +760,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_3"
@@ -704,7 +779,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_3"
@@ -723,7 +798,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_3"
@@ -742,7 +817,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_3"
@@ -763,7 +838,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_3_wall_bt"/>
@@ -778,7 +853,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#ff0000"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_3_wall_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -796,7 +870,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_3_floor_bt"/>
@@ -811,7 +885,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#ff0000"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_3_floor_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -829,7 +902,7 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
                                         android:layout_marginStart="6dp"
                                         android:id="@+id/hale_3_furniture_bt"/>
@@ -844,7 +917,6 @@
                                         android:layout_width="55dp"
                                         android:layout_height="55dp"
                                         app:cardCornerRadius="100dp"
-                                        android:backgroundTint="#00FF00"
                                         android:layout_margin="6dp"
                                         android:id="@+id/hale_3_furniture_card_color">
                                     </com.google.android.material.card.MaterialCardView>
@@ -853,9 +925,6 @@
 
 
                             </LinearLayout>
-
-
-
 
 
                         </com.google.android.material.card.MaterialCardView>
@@ -884,7 +953,8 @@
                             android:id="@+id/room_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="numberSigned"/>
+                            android:inputType="numberSigned"
+                            tools:ignore="LabelFor" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -911,14 +981,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Room 1"
+                                    android:text="@string/room_1"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -926,15 +996,57 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/room_1_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_1_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_1_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_1_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_1_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_1_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -947,7 +1059,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_room_1"
@@ -966,7 +1078,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_room_1"
@@ -985,7 +1097,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_room_1"
@@ -1004,7 +1116,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_room_1"
@@ -1025,10 +1137,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
-
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_1_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1036,13 +1148,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_1_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1057,9 +1169,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_1_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1067,13 +1180,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_1_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1088,9 +1201,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_1_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1098,13 +1212,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_1_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1138,14 +1252,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Room 2"
+                                    android:text="@string/room_2"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -1153,15 +1267,57 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/room_2_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_2_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_2_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_2_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_2_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_2_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -1174,7 +1330,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_room_2"
@@ -1193,7 +1349,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_room_2"
@@ -1212,7 +1368,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_room_2"
@@ -1231,7 +1387,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_room_2"
@@ -1252,10 +1408,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
-
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_2_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1263,13 +1419,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_2_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1284,9 +1440,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_2_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1294,13 +1451,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_2_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1315,9 +1472,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_2_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1325,13 +1483,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_2_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1365,14 +1523,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Room 3"
+                                    android:text="@string/room_3"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -1380,16 +1538,59 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/room_3_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_3_length_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_3_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_3_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_3_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_3_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
 
 
                                 <!-- type of material menu select-->
@@ -1401,7 +1602,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_room_3"
@@ -1420,7 +1621,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_room_3"
@@ -1439,7 +1640,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_room_3"
@@ -1458,7 +1659,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_room_3"
@@ -1479,10 +1680,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
-
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_3_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1490,13 +1691,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_3_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1511,9 +1712,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_3_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1521,13 +1723,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_3_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1542,9 +1744,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_3_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1552,13 +1755,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_3_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1592,14 +1795,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Room 4"
+                                    android:text="@string/room_4"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -1607,15 +1810,57 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/room_4_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_4_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_4_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_4_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_4_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_4_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -1628,7 +1873,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_room_4"
@@ -1647,7 +1892,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_room_4"
@@ -1666,7 +1911,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_room_4"
@@ -1685,7 +1930,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_room_4"
@@ -1706,10 +1951,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
-
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_4_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1717,13 +1962,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_4_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1738,9 +1983,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_4_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1748,13 +1994,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_4_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1769,9 +2015,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_4_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1779,16 +2026,15 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_4_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
-
 
                             </LinearLayout>
 
@@ -1819,14 +2065,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Room 5"
+                                    android:text="@string/room_5"
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textSize="15sp"
                                     android:layout_margin="3dp"/>
 
 
-                                <!-- measurement edit text -->
+                                <!-- Length edit text -->
                                 <com.google.android.material.textfield.TextInputLayout
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_margin="3dp"
@@ -1834,15 +2080,57 @@
                                     android:layout_height="wrap_content"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    tools:ignore="TooDeepLayout">
+                                    android:id="@+id/room_5_length_edit_layout">
                                     <EditText
                                         android:textCursorDrawable="@color/primaryTextColor"
-                                        android:inputType="number"
+                                        android:inputType="numberDecimal"
                                         android:maxLines="1"
-                                        android:hint="Measure"
+                                        android:hint="@string/length"
                                         android:layout_height="wrap_content"
                                         android:layout_width="match_parent"
-                                        android:importantForAutofill="no" />
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_5_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_5_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_5_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/room_5_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/room_5_height_edit"/>
                                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -1855,7 +2143,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Material">
+                                    android:hint="@string/material">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/type_of_material_room_5"
@@ -1874,7 +2162,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Style of furniture">
+                                    android:hint="@string/style_of_furniture">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/style_of_furniture_room_5"
@@ -1893,7 +2181,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Pattern">
+                                    android:hint="@string/pattern">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/pattern_room_5"
@@ -1912,7 +2200,7 @@
                                     android:layout_height="0dp"
                                     app:boxStrokeColor="@color/primaryTextColor"
                                     app:hintTextColor="@color/primaryTextColor"
-                                    android:hint="Brand">
+                                    android:hint="@string/brand">
 
                                     <AutoCompleteTextView
                                         android:id="@+id/brand_room_5"
@@ -1933,10 +2221,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Wall Color"
+                                        android:text="@string/wall_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
-
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_5_wall_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1944,13 +2232,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_5_wall_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1965,9 +2253,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Floor Color"
+                                        android:text="@string/floor_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_5_floor_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -1975,13 +2264,13 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_5_floor_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
@@ -1996,9 +2285,10 @@
                                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Furniture Color"
+                                        android:text="@string/furniture_color"
                                         android:layout_marginTop="15dp"
-                                        android:layout_marginStart="6dp"/>
+                                        android:layout_marginStart="6dp"
+                                        android:id="@+id/room_5_furniture_bt"/>
 
                                     <View
                                         android:layout_width="0dp"
@@ -2006,57 +2296,25 @@
                                         android:layout_weight="1"
                                         />
 
-                                    <ImageView
-                                        android:layout_width="65dp"
-                                        android:layout_height="65dp"
-                                        android:gravity="right"
-                                        tools:ignore="RtlHardcoded"
-                                        android:background="@color/colorPrimary"
-                                        android:layout_margin="6dp"/>
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        app:cardCornerRadius="100dp"
+                                        android:layout_margin="6dp"
+                                        android:id="@+id/room_5_furniture_card_color">
+                                    </com.google.android.material.card.MaterialCardView>
 
                                 </LinearLayout>
 
 
                             </LinearLayout>
 
-
-
-
-
                         </com.google.android.material.card.MaterialCardView>
 
+      <!-- ************************************************************************************* -->
 
 
 
-                        <!-- Spacer -->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@android:color/darker_gray"
-                            android:layout_marginTop="5dp"/>
-
-                        <!-- Rooms menu select-->
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_weight="1"
-                            android:layout_margin="3dp"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            app:boxStrokeColor="@color/primaryTextColor"
-                            app:hintTextColor="@color/primaryTextColor"
-                            android:hint="@string/kitchen_number">
-
-                            <AutoCompleteTextView
-                                android:id="@+id/kitchen_number"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="numberSigned"/>
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-                        <!-- kitchen card here -->
 
                         <!-- Spacer -->
                         <View
@@ -2064,8 +2322,6 @@
                             android:layout_height="1dp"
                             android:background="@android:color/darker_gray"
                             android:layout_marginTop="5dp"/>
-
-
 
                         <!-- Bathroom menu select-->
                         <com.google.android.material.textfield.TextInputLayout
@@ -2082,13 +2338,743 @@
                                 android:id="@+id/bathroom_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="numberSigned"/>
+                                android:inputType="numberSigned"
+                                tools:ignore="LabelFor" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
 
 
-                        <!-- bathroom card here -->
+                        <!-- Bathroom 1 card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/bathroom_1"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/bathroom_1"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- Length edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_1_length_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/length"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_1_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_1_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_1_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_1_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_1_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="@string/brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/bathroom_1_brand"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/wall_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/floor_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Bathroom 2 card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/bathroom_2"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/bathroom_2"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- Length edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_2_length_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/length"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_2_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_2_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_2_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_2_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_2_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="@string/brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/bathroom_2_brand"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/wall_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/floor_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Bathroom 3 card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone"
+                            android:id="@+id/bathroom_3"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/bathroom_3"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- Length edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_3_length_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/length"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_3_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_3_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_3_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/bathroom_3_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/bathroom_3_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="@string/brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/bathroom_3_brand"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/wall_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/floor_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+<!-- ******************************************************************************************* -->
+                        <!-- Spacer -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginTop="5dp"/>
+
+                        <!-- Kitchen card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="5dp"
+                            app:strokeColor="#000"
+                            app:strokeWidth="1dp"
+                            android:id="@+id/kitchen"
+                            android:layout_marginTop="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="6dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/kitchen"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_margin="3dp"/>
+
+
+                                <!-- Length edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/kitchen_length_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/length"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/kitchen_length_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Width edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/kitchen_width_edit_layout"
+                                    tools:ignore="TooManyViews">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/width"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/kitchen_width_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Height edit text -->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_margin="3dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:id="@+id/kitchen_height_edit_layout">
+                                    <EditText
+                                        android:textCursorDrawable="@color/primaryTextColor"
+                                        android:inputType="numberDecimal"
+                                        android:maxLines="1"
+                                        android:hint="@string/height"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:id="@+id/kitchen_height_edit"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <!-- Brand menu select-->
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_weight="1"
+                                    android:layout_margin="3dp"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:boxStrokeColor="@color/primaryTextColor"
+                                    app:hintTextColor="@color/primaryTextColor"
+                                    android:hint="@string/brand">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/kitchen_brand"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="LabelFor" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- wall color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/wall_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+                                <!-- Floor color -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <com.google.android.material.button.MaterialButton
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/floor_color"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_marginStart="6dp"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:gravity="right"
+                                        tools:ignore="RtlHardcoded"
+                                        android:background="@color/colorPrimary"
+                                        android:layout_margin="6dp"
+                                        android:contentDescription="@string/todo" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
 
 
                     </LinearLayout>
