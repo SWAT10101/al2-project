@@ -78,6 +78,10 @@ public class Order_Fragment extends Fragment {
         }
 
 
+
+
+
+
         //*********************** hale 1 ***********************************************************
 
         MaterialCardView hale_1 = fragment_order_view.findViewById(R.id.hale_1);
@@ -97,6 +101,11 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout hale_1_height_edit_layout = fragment_order_view.findViewById(R.id.hale_1_height_edit_layout);
         EditText hale_1_height_edit = fragment_order_view.findViewById(R.id.hale_1_height_edit);
+
+        // Price
+        TextInputLayout hale_1_price_edit_layout = fragment_order_view.findViewById(R.id.hale_1_price_edit_layout);
+        EditText hale_1_price_edit = fragment_order_view.findViewById(R.id.hale_1_price_edit);
+
 
         type_of_material_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
         style_of_furniture_1.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
@@ -233,6 +242,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout hale_2_height_edit_layout = fragment_order_view.findViewById(R.id.hale_2_height_edit_layout);
         EditText hale_2_height_edit = fragment_order_view.findViewById(R.id.hale_2_height_edit);
 
+        // Price
+        TextInputLayout hale_2_price_edit_layout = fragment_order_view.findViewById(R.id.hale_2_price_edit_layout);
+        EditText hale_2_price_edit = fragment_order_view.findViewById(R.id.hale_2_price_edit);
+
         type_of_material_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
         style_of_furniture_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
         pattern_2.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, Pattern_type));
@@ -367,6 +380,10 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout hale_3_height_edit_layout = fragment_order_view.findViewById(R.id.hale_3_height_edit_layout);
         EditText hale_3_height_edit = fragment_order_view.findViewById(R.id.hale_3_height_edit);
+
+        // Price
+        TextInputLayout hale_3_price_edit_layout = fragment_order_view.findViewById(R.id.hale_3_price_edit_layout);
+        EditText hale_3_price_edit = fragment_order_view.findViewById(R.id.hale_3_price_edit);
 
         type_of_material_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, material_type));
         style_of_furniture_3.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, style));
@@ -503,6 +520,10 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout room_1_height_edit_layout = fragment_order_view.findViewById(R.id.room_1_height_edit_layout);
         EditText room_1_height_edit = fragment_order_view.findViewById(R.id.room_1_height_edit);
+
+        // Price
+        TextInputLayout room_1_price_edit_layout = fragment_order_view.findViewById(R.id.room_1_price_edit_layout);
+        EditText room_1_price_edit = fragment_order_view.findViewById(R.id.room_1_price_edit);
 
 
         // wall color
@@ -656,6 +677,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout room_2_height_edit_layout = fragment_order_view.findViewById(R.id.room_2_height_edit_layout);
         EditText room_2_height_edit = fragment_order_view.findViewById(R.id.room_2_height_edit);
 
+        // Price
+        TextInputLayout room_2_price_edit_layout = fragment_order_view.findViewById(R.id.room_2_price_edit_layout);
+        EditText room_2_price_edit = fragment_order_view.findViewById(R.id.room_2_price_edit);
+
 
         // wall color
         MaterialButton room_2_wall_bt = fragment_order_view.findViewById(R.id.room_2_wall_bt);
@@ -802,6 +827,10 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout room_3_height_edit_layout = fragment_order_view.findViewById(R.id.room_3_height_edit_layout);
         EditText room_3_height_edit = fragment_order_view.findViewById(R.id.room_3_height_edit);
+
+        // Price
+        TextInputLayout room_3_price_edit_layout = fragment_order_view.findViewById(R.id.room_3_price_edit_layout);
+        EditText room_3_price_edit = fragment_order_view.findViewById(R.id.room_3_price_edit);
 
         // wall color
         MaterialButton room_3_wall_bt = fragment_order_view.findViewById(R.id.room_3_wall_bt);
@@ -952,6 +981,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout room_4_height_edit_layout = fragment_order_view.findViewById(R.id.room_4_height_edit_layout);
         EditText room_4_height_edit = fragment_order_view.findViewById(R.id.room_4_height_edit);
 
+        // Price
+        TextInputLayout room_4_price_edit_layout = fragment_order_view.findViewById(R.id.room_4_price_edit_layout);
+        EditText room_4_price_edit = fragment_order_view.findViewById(R.id.room_4_price_edit);
+
 
 
         // wall color
@@ -1101,6 +1134,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout room_5_height_edit_layout = fragment_order_view.findViewById(R.id.room_5_height_edit_layout);
         EditText room_5_height_edit = fragment_order_view.findViewById(R.id.room_5_height_edit);
 
+        // Price
+        TextInputLayout room_5_price_edit_layout = fragment_order_view.findViewById(R.id.room_5_price_edit_layout);
+        EditText room_5_price_edit = fragment_order_view.findViewById(R.id.room_5_price_edit);
+
         // wall color
         MaterialButton room_5_wall_bt = fragment_order_view.findViewById(R.id.room_5_wall_bt);
         MaterialCardView room_5_wall_card_color = fragment_order_view.findViewById(R.id.room_5_wall_card_color);
@@ -1248,6 +1285,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout bathroom_1_height_edit_layout = fragment_order_view.findViewById(R.id.bathroom_1_height_edit_layout);
         EditText bathroom_1_height_edit = fragment_order_view.findViewById(R.id.bathroom_1_height_edit);
 
+        // Price
+        TextInputLayout bathroom_1_price_edit_layout = fragment_order_view.findViewById(R.id.bathroom_1_price_edit_layout);
+        EditText bathroom_1_price_edit = fragment_order_view.findViewById(R.id.bathroom_1_price_edit);
+
         // wall color
         MaterialButton bathroom_1_wall_bt = fragment_order_view.findViewById(R.id.bathroom_1_wall_bt);
         MaterialCardView bathroom_1_wall_card_color = fragment_order_view.findViewById(R.id.bathroom_1_wall_card_color);
@@ -1346,6 +1387,10 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout bathroom_2_height_edit_layout = fragment_order_view.findViewById(R.id.bathroom_2_height_edit_layout);
         EditText bathroom_2_height_edit = fragment_order_view.findViewById(R.id.bathroom_2_height_edit);
+
+        // Price
+        TextInputLayout bathroom_2_price_edit_layout = fragment_order_view.findViewById(R.id.bathroom_2_price_edit_layout);
+        EditText bathroom_2_price_edit = fragment_order_view.findViewById(R.id.bathroom_2_price_edit);
 
         // wall color
         MaterialButton bathroom_2_wall_bt = fragment_order_view.findViewById(R.id.bathroom_2_wall_bt);
@@ -1448,6 +1493,10 @@ public class Order_Fragment extends Fragment {
         TextInputLayout bathroom_3_height_edit_layout = fragment_order_view.findViewById(R.id.bathroom_3_height_edit_layout);
         EditText bathroom_3_height_edit = fragment_order_view.findViewById(R.id.bathroom_3_height_edit);
 
+        // Price
+        TextInputLayout bathroom_3_price_edit_layout = fragment_order_view.findViewById(R.id.bathroom_3_price_edit_layout);
+        EditText bathroom_3_price_edit = fragment_order_view.findViewById(R.id.bathroom_3_price_edit);
+
         // wall color
         MaterialButton bathroom_3_wall_bt = fragment_order_view.findViewById(R.id.bathroom_3_wall_bt);
         MaterialCardView bathroom_3_wall_card_color = fragment_order_view.findViewById(R.id.bathroom_3_wall_card_color);
@@ -1546,6 +1595,10 @@ public class Order_Fragment extends Fragment {
         // Height
         TextInputLayout kitchen_height_edit_layout = fragment_order_view.findViewById(R.id.kitchen_height_edit_layout);
         EditText kitchen_height_edit = fragment_order_view.findViewById(R.id.kitchen_height_edit);
+
+        // Price
+        TextInputLayout kitchen_price_edit_layout = fragment_order_view.findViewById(R.id.kitchen_price_edit_layout);
+        EditText kitchen_price_edit = fragment_order_view.findViewById(R.id.kitchen_price_edit);
 
         // wall color
         MaterialButton kitchen_wall_bt = fragment_order_view.findViewById(R.id.kitchen_wall_bt);
@@ -1788,6 +1841,15 @@ public class Order_Fragment extends Fragment {
         });
 
 
+        MaterialButton submit_order = fragment_order_view.findViewById(R.id.submit_order);
+        submit_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "The order create successfully.", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
 
         return  fragment_order_view;
@@ -1820,4 +1882,6 @@ public class Order_Fragment extends Fragment {
 
         }
     }
+
+
 }
