@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -95,6 +97,9 @@ public class UserArea extends AppCompatActivity {
                      break;
 
                      case R.id.logout:
+                         Intent gotologin = new Intent(UserArea.this, LoginActivity.class);
+                         startActivity(gotologin);
+                         UserArea.this.finish();
                          Log.d("###", "Hello from logout");
 
                      break;
@@ -130,6 +135,13 @@ public class UserArea extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(UserArea.this, "Logout from side menu :)", Toast.LENGTH_LONG).show();
+    }
+
 
 
     public TextView getUserName() {

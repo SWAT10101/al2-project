@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -65,15 +66,23 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void login(View view) {
-        Intent i = new Intent(LoginActivity.this, UserArea.class);
-        startActivity(i);
+       // Intent i = new Intent(LoginActivity.this, UserArea.class);
+        //startActivity(i);
 
-/*
+
+
+
        if(this.Validate())
         {
 
             email = login_email_edit.getText().toString().trim();
             password = login_password.getText().toString().trim();
+            ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+            progressDialog.setTitle("Login");
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(false);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.show();
 
             Call<LoginResponse> call = RetrofitClient
                     .getInstance()
@@ -84,6 +93,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
+
+
                     if(!response.isSuccessful())
                     {
 
@@ -93,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                             LoginResponse message = gson.fromJson(response.errorBody().charStream(), LoginResponse.class);
                             Log.d("#####", message.getMessage());
 
+
+                            progressDialog.dismiss();
                             new MaterialAlertDialogBuilder(LoginActivity.this)
                                     .setTitle("Error")
                                     .setMessage(message.getMessage())
@@ -107,8 +120,11 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(response.isSuccessful())
                     {
+
+
                         if(response.body() != null)
                         {
+
 
                             Intent i = new Intent(LoginActivity.this, UserArea.class);
                             i.putExtra("firstname", response.body().getUser().getFirstName());
@@ -123,6 +139,10 @@ public class LoginActivity extends AppCompatActivity {
                             i.putExtra("floor", response.body().getUser().getFloor());
                             i.putExtra("flat", response.body().getUser().getFlat());
                             startActivity(i);
+
+                            progressDialog.dismiss();
+                            finish();
+
 
 
 
@@ -153,7 +173,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         }
-*/
+
 
     }
 
